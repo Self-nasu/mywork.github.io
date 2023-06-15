@@ -1,5 +1,5 @@
 // script.js
-const accessToken = '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';
+const accessToken = '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';
 const username = 'Self-nasu';
 var mygit = document.getElementById('mygit');
 
