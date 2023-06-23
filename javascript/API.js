@@ -1,5 +1,4 @@
-// script.js
-const accessToken = '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';
+const accessToken = process.env.GITHUB_ACCESS_TOKEN; // Use environment variable instead of hardcoding the token
 const username = 'Self-nasu';
 var mygit = document.getElementById('mygit');
 
@@ -14,7 +13,7 @@ fetch(`https://api.github.com/users/${username}/repos`, {
 
     const filteredRepos = data.filter(repository => repository.name.includes('.github.io'));
 
-    console.log("fecthing Self-nasu Github........");
+    console.log("Fetching Self-nasu's GitHub repositories...");
 
     filteredRepos.forEach(repository => {
       const card = document.createElement('div');
@@ -36,7 +35,6 @@ fetch(`https://api.github.com/users/${username}/repos`, {
       visitButton.target = '_blank';
       visitButton.textContent = 'Visit Repo';
       visitButton.classList.add('btn', 'btn-primary', 'm-1');
-
 
       const copyButton = document.createElement('button');
       copyButton.textContent = 'Copy Link';
@@ -67,13 +65,13 @@ fetch(`https://api.github.com/users/${username}/repos`, {
 
       projectsContainer.appendChild(card);
 
-      console.log("You Github fetch Completed.");
+      console.log("GitHub fetch completed.");
     });
   })
   .catch(error => {
     console.error('Error:', error);
     mygit.style.display = 'none';
-    console.log("An error has been arised in github self fetching.");
+    console.log("An error has occurred while fetching from your GitHub.");
   });
 
 function copyToClipboard(element) {
