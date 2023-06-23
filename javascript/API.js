@@ -1,4 +1,4 @@
-const accessToken = process.env.GITHUB_ACCESS_TOKEN; // Use environment variable instead of hardcoding the token
+const accessToken = process.GITHUB_ACCESS_TOKEN; // Use environment variable instead of hardcoding the token
 const username = 'Self-nasu';
 var mygit = document.getElementById('mygit');
 
